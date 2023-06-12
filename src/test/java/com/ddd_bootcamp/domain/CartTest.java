@@ -2,22 +2,27 @@ package com.ddd_bootcamp.domain;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 class CartTest {
 
     @Test
     void shouldAddProductToCart() {
-        Cart cart = new Cart();
-        Product product = new Product("Some test product");
-        cart.add(product);
-
-        List<Product> actual = cart.getProducts();
-
-        assertEquals(1, actual.size());
-        assertEquals("Some test product", actual.get(0).getName());
-
+        Product applePencil = new Product("applePencil");
+        Cart mycart = new Cart();
+        mycart.add(applePencil, 1);
+        assert(mycart.getProductCount()).equals(1);
+    }
+    @Test
+    void shouldAddSonyHeadphoneToCart() {
+        Product sonyHeadphone = new Product("SonyWirelessHeadphone");
+        Cart mycart = new Cart();
+        mycart.add(sonyHeadphone, 1);
+        assert(mycart.getProductCount()).equals(1);
+    }
+    @Test
+    void shouldAdd2AProductToCart() {
+        Product applePencil = new Product("applePencil");
+        Cart mycart = new Cart();
+        mycart.add(applePencil, 2);
+        assert(mycart.getProductCount()).equals(2);
     }
 }

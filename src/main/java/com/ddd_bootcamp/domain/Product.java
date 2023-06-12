@@ -1,20 +1,13 @@
 package com.ddd_bootcamp.domain;
 
 public class Product {
-    private String name;
+    private String type;
 
-    public Product(String name) {
-        this.name = name;
+    public Product(String t) {
+        type = t;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "name='" + name + '\'' +
-                '}';
+    public String getType() {
+        return type;
     }
 }

@@ -1,23 +1,19 @@
 package com.ddd_bootcamp.domain;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Cart {
-    private List<Product> products = new ArrayList<>();
+    private Integer amount;
+    private Product product;
 
-    public void add(Product product) {
-        products.add(product);
+    public void add(Product p, Integer a) {
+        product = p;
+        amount = a;
     }
 
-    public List<Product> getProducts() {
-        return products;
+    public String getProductType() {
+        return product.getType();
     }
 
-    @Override
-    public String toString() {
-        return "Cart{" +
-                "products=" + products +
-                '}';
+    public Integer getProductCount() {
+        return amount;
     }
 }
